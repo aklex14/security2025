@@ -1,12 +1,13 @@
 package eduivanov.security2025.Character;
 
-/* 
+/*
   @author  User
-  @project  IntelliJ IDEA
-  @class  CharacterRestController
-  version 1.0.0
-  @since 30.09.2025 - 23.45
+  @project IntelliJ IDEA
+  @class   CharacterRestController
+  @version 1.0.0
+  @since   30.09.2025 - 23.45
 */
+
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
@@ -18,6 +19,8 @@ import java.util.List;
 public class CharacterRestController {
 
     private final CharacterService service;
+
+    // --- CRUD ---
 
     @GetMapping
     public List<Character> getCharacters() {
@@ -42,5 +45,22 @@ public class CharacterRestController {
     @PutMapping
     public Character update(@RequestBody Character character) {
         return service.update(character);
+    }
+
+    // --- HELLO ENDPOINTS ---
+
+    @GetMapping("/hello/user")
+    public String helloUser() {
+        return "Hello Character User!";
+    }
+
+    @GetMapping("/hello/admin")
+    public String helloAdmin() {
+        return "Hello Character Admin!";
+    }
+
+    @GetMapping("/hello/unknown")
+    public String helloUnknown() {
+        return "Hello Unknown Character Entity!";
     }
 }
