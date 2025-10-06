@@ -1,0 +1,57 @@
+### GET ALL CHARACTERS
+GET http://localhost:8080/api/v1/characters
+Authorization: Basic admin admin
+Accept: application/json
+
+### GET ALL CHARACTERS BAD CREDENTIALS
+GET http://localhost:8080/api/v1/characters
+Authorization: Basic notadmin surelynotadmin
+Accept: application/json
+
+### GET ONE CHARACTER
+GET http://localhost:8080/api/v1/characters/3
+Authorization: Basic admin admin
+Accept: application/json
+
+### GET HELLO FOR USER
+GET http://localhost:8080/api/v1/characters/hello/user
+Authorization: Basic admin admin
+Accept: application/json
+
+### GET HELLO FOR ADMIN
+GET http://localhost:8080/api/v1/characters/hello/admin
+Authorization: Basic admin admin
+Accept: application/json
+
+### GET HELLO FOR UNKNOWN
+GET http://localhost:8080/api/v1/characters/hello/unknown
+Authorization: Basic admin admin
+Accept: application/json
+
+### CREATE ONE CHARACTER
+POST http://localhost:8080/api/v1/characters
+Authorization: Basic admin admin
+Accept: application/json
+Content-Type: application/json
+
+{
+  "name": "Geralt",
+  "classType": "Witcher"
+}
+
+### UPDATE ONE CHARACTER
+PUT http://localhost:8080/api/v1/characters
+Authorization: Basic admin admin
+Accept: application/json
+Content-Type: application/json
+
+{
+  "id": "3",
+  "name": "Geralt of Rivia",
+  "classType": "Mutant Witcher"
+}
+
+### DELETE ONE CHARACTER
+DELETE http://localhost:8080/api/v1/characters/3
+Authorization: Basic admin admin
+Accept: application/json
